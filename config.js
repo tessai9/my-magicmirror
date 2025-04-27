@@ -54,18 +54,8 @@ let config = {
 			}
 		},
 		{
-			module: "calendar",
-			header: "US Holidays",
-			position: "top_left",
-			config: {
-				calendars: [
-					{
-						fetchInterval: 7 * 24 * 60 * 60 * 1000,
-						symbol: "calendar-check",
-						url: "https://ics.calendarlabs.com/76/mm3137/US_Holidays.ics"
-					}
-				]
-			}
+			module: "tesao_calendar",
+			position: "top_left"
 		},
 		{
 			module: "compliments",
@@ -117,10 +107,6 @@ let config = {
 					{
 						title: "兵庫県 しごと・産業フィード",
 						url: "https://web.pref.hyogo.lg.jp/rss/work.xml"
-					},
-					{
-						title: "神戸市 フィード",
-						url: "https://city.kobe.lg.jp/rss/whatsnew.xml"
 					},
 					{
 						title: "Publickey",

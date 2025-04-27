@@ -1,0 +1,37 @@
+/* modules/calendar/calendar.css */
+
+.calendar {
+  /* Add basic styling for the calendar container */
+  border: 1px solid #ccc;
+  padding: 10px;
+  max-width: 300px; /* Adjust as needed */
+}
+
+.calendar .header {
+  /* Styling for the month/year header */
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.calendar table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #eee;
+}
+
+.calendar th {
+  /* Styling for day headers (Sun, Mon, etc.) */
+  background-color: #f2f2f2;
+}
+
+.calendar .today {
+  /* Styling for the current day */
+  font-weight: bold;
+  background-color: #ffebcc; /* Example highlight color */
+}

@@ -1,0 +1,47 @@
+.tesao-newsfeed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
+  padding: 4px 0;
+}
+
+.news-text-area {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+}
+
+.news-source {
+  font-weight: bold;
+}
+
+.news-sep {
+  opacity: 0.5;
+}
+
+.news-title {
+  /* MagicMirrorの .small クラスに準じる */
+}
+
+.news-date {
+  opacity: 0.6;
+}
+
+.news-qr {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.news-qr:hover {
+  opacity: 1.0;
+}
+
+.news-qr img {
+  display: block;
+  border-radius: 2px;
+}

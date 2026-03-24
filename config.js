@@ -53,9 +53,22 @@ let config = {
 				displaySeconds: true
 			}
 		},
+		// {
+		// 	module: "tesao_calendar",
+		// 	position: "top_left"
+		// },
 		{
-			module: "tesao_calendar",
-			position: "top_left"
+			module: "calendar",
+			headers: "予定",
+			position: "top_left",
+			config: {
+				calendars: [
+					{
+						symbol: "calendar",
+						url: "https://calendar.google.com/calendar/ical/e887241cc2b7151ace19b56d969f9bf511273fd87b23747e15c660dc5a5835f6%40group.calendar.google.com/private-ad680cc44853604d81391db0adf0491e/basic.ics",
+					}
+				]
+			},
 		},
 		{
 			module: "compliments",
@@ -84,14 +97,10 @@ let config = {
 			}
 		},
 		{
-			module: "newsfeed",
+			module: "tesao_newsfeed",
 			position: "bottom_bar",
 			config: {
 				feeds: [
-					{
-						title: "NHKニュース",
-						url: "https://www.nhk.or.jp/rss/news/cat0.xml"
-					},
 					{
 						title: "GIGAZINE",
 						url: "https://gigazine.net/news/rss_2.0/"
@@ -101,22 +110,14 @@ let config = {
 						url: "https://kobe-journal.com/feed"
 					},
 					{
-						title: "兵庫県 食・農林水産フィード",
-						url: "https://web.pref.hyogo.lg.jp/rss/aff.xml"
-					},
-					{
-						title: "兵庫県 しごと・産業フィード",
-						url: "https://web.pref.hyogo.lg.jp/rss/work.xml"
-					},
-					{
 						title: "Publickey",
 						url: "https://publickey1.jp/atom.xml"
 					}
 				],
 				showSourceTitle: true,
 				showPublishDate: true,
-				broadcastNewsFeeds: true,
-				broadcastNewsUpdates: true
+				updateInterval: 10000,
+				qrSize: 80
 			}
 		},
 	]

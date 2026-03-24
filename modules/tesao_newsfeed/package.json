@@ -1,0 +1,9 @@
+{
+  "name": "tesao_newsfeed",
+  "version": "1.0.0",
+  "description": "MagicMirror newsfeed module with QR code support",
+  "dependencies": {
+    "qrcode": "^1.5.3",
+    "rss-parser": "^3.13.0"
+  }
+}

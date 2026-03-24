@@ -67,7 +67,7 @@ let config = {
 			},
 		},
 		{
-			module: "compliments",
+			module: "tesao_negoto",
 			position: "lower_third"
 		},
 		{

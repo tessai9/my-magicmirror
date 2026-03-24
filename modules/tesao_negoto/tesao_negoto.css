@@ -1,0 +1,33 @@
+.negoto-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  border-left: 3px solid rgba(255, 255, 255, 0.25);
+  text-align: left;
+}
+
+.negoto-text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 2em;
+  line-height: 1.6;
+  color: #e8e8e8;
+  margin: 0 0 10px 0;
+}
+
+.negoto-separator {
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.35);
+  text-align: center;
+  margin: 6px 0;
+  letter-spacing: 0.3em;
+}
+
+.negoto-attribution {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
+  margin: 0;
+}

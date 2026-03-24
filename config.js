@@ -53,10 +53,6 @@ let config = {
 				displaySeconds: true
 			}
 		},
-		// {
-		// 	module: "tesao_calendar",
-		// 	position: "top_left"
-		// },
 		{
 			module: "calendar",
 			headers: "予定",

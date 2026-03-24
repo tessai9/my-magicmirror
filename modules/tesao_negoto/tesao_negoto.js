@@ -6,6 +6,7 @@ Module.register("tesao_negoto", {
 
   start() {
     this.items = [];
+    this.queue = [];
     this.currentIndex = 0;
     this.sendSocketNotification("LOAD_NEGOTO");
   },
@@ -17,14 +18,39 @@ Module.register("tesao_negoto", {
   socketNotificationReceived(notification, payload) {
     if (notification === "NEGOTO_ITEMS" && payload.length > 0) {
       this.items = payload;
+      this.queue = this.shuffle(this.items);
+      this.currentIndex = 0;
       this.updateDom(this.config.animationSpeed);
       this.scheduleRotation();
     }
   },
 
+  shuffle(array) {
+    const a = [...array];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  },
+
+  reshuffleAvoidingLast(lastItem) {
+    const q = this.shuffle(this.items);
+    if (q[0] === lastItem && q.length > 1) {
+      const swapIdx = Math.floor(Math.random() * (q.length - 1)) + 1;
+      [q[0], q[swapIdx]] = [q[swapIdx], q[0]];
+    }
+    return q;
+  },
+
   scheduleRotation() {
     setInterval(() => {
-      this.currentIndex = (this.currentIndex + 1) % this.items.length;
+      this.currentIndex++;
+      if (this.currentIndex >= this.queue.length) {
+        const lastItem = this.queue[this.queue.length - 1];
+        this.queue = this.reshuffleAvoidingLast(lastItem);
+        this.currentIndex = 0;
+      }
       this.updateDom(this.config.animationSpeed);
     }, this.config.updateInterval);
   },
@@ -33,13 +59,13 @@ Module.register("tesao_negoto", {
     const wrapper = document.createElement("div");
     wrapper.className = "negoto-wrapper";
 
-    if (this.items.length === 0) {
+    if (this.queue.length === 0) {
       wrapper.classList.add("dimmed", "small");
       wrapper.textContent = "...";
       return wrapper;
     }
 
-    const item = this.items[this.currentIndex];
+    const item = this.queue[this.currentIndex];
 
     const text = document.createElement("p");
     text.className = "negoto-text";
